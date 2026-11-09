@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Macros S.W.A.T-ELITE</title>
+  <style>
+    :root {
+      --bg-color: #0b0f17;
+      --card-bg: #141b26;
+      --text-main: #e2e8f0;
+      --text-muted: #8c9bae;
+      --accent-gray: #1e293b;
+      --accent-hover: #2a374a;
+      --success-color: #0d9488; /* Verde sutil/teal profesional */
+      --border-color: #222d3f;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      padding: 20px 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .wrapper {
+      width: 100%;
+      max-width: 500px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    header {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 0; /* Cuadrado */
+      padding: 20px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    h1 {
+      font-size: 1.2rem;
+      color: #94a3b8;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+
+    .btn-download {
+      background-color: transparent;
+      color: #38bdf8;
+      border: 1px solid #38bdf8;
+      padding: 10px;
+      text-decoration: none;
+      font-weight: 500;
+      border-radius: 0; /* Cuadrado */
+      display: block;
+      text-align: center;
+      font-size: 0.9rem;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .btn-download:hover {
+      background-color: rgba(56, 189, 248, 0.1);
+    }
+
+    .section-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 0; /* Cuadrado */
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .section-title {
+      font-size: 1rem;
+      color: #cbd5e1;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 6px;
+      font-weight: 600;
+    }
+
+    .macro-box {
+      background: rgba(11, 15, 23, 0.4);
+      border: 1px solid var(--border-color);
+      border-radius: 0; /* Cuadrado */
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .macro-text {
+      font-family: monospace;
+      font-size: 0.83rem;
+      color: var(--text-muted);
+      word-break: break-word;
+      line-height: 1.4;
+    }
+
+    .btn-copy {
+      background-color: var(--accent-gray);
+      color: var(--text-main);
+      border: none;
+      border-radius: 0; /* Cuadrado estrictamente */
+      padding: 9px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 500;
+      text-align: center;
+      width: 100%;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .btn-copy:hover {
+      background-color: var(--accent-hover);
+      color: #fff;
+    }
+
+    .btn-copy:active {
+      background-color: #334155;
+    }
+
+    .copied {
+      background-color: var(--success-color) !important;
+      color: #fff !important;
+    }
+
+    #toast {
+      visibility: hidden;
+      background-color: #1e293b;
+      color: #e2e8f0;
+      border: 1px solid var(--border-color);
+      text-align: center;
+      border-radius: 0; /* Cuadrado */
+      padding: 10px 16px;
+      position: fixed;
+      z-index: 100;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.9rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      transition: opacity 0.3s, visibility 0.3s;
+      width: 90%;
+      max-width: 350px;
+    }
+
+    #toast.show {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+
+    <!-- CABECERA Y DESCARGA -->
+    <header>
+      <h1>S.W.A.T - ELITE // MACROS</h1>
+      <a href="material_estudio.xlsx" download="Material_Estudio_SWAT.xlsx" class="btn-download">
+        ↓ Descargar Material de Estudio (Excel)
+      </a>
+    </header>
+
+    <!-- BLOQUE 1: USO DE FUERZA Y TACTICO -->
+    <div class="section-card">
+      <h2 class="section-title">1. Uso de Fuerza y Táctico</h2>
+      
+      <div class="macro-box">
+        <span class="macro-text">/me [S.W.A.T-ELITE]¡BAJE EL ARMA INMEDIATAMENTE O UTILIZARÉ TASER O FUERZA LETAL!</span>
+        <button class="btn-copy" onclick="copyMacro(this)">Copiar</button>
+      </div>
+
+      <div class="macro-box">
+        <span class="macro-text">/do [S.W.A.T-ELITE]¡TASER! ¡TASER! ¡TASER!</span>
+        <button class="btn-copy" onclick="copyMacro(this)">Copiar</button>
+      </div>
+
+      <div class="macro-box">
+        <span class="macro-text">/do [S.W.A.T-ELITE]¡TASER! ¡TASER! ¡TASER! ROMPE LA VENTANA, INMOVILIZA AL SOSPECHOSO Y LO RETIRA DEL VEHÍCULO.</span>
+        <button class="btn-copy" onclick="copyMacro(this)">Copiar</button>
+      </div>
+
+      <div class="macro-box">
+        <span class="macro-text">/do [S.W.A.T-ELITE] DISPARAR AL SOSPECHOSO ARMADO / VEHÍCULO PARA PROTEGER A LOS CIUDADANOS, COMPAÑEROS OFICIALES Y A SÍ MISMO.</span>
+        <button class="btn-copy" onclick="copyMacro(this)">Copiar</button>
+      </div>
+    </div>
+
+    <!-- BLOQUE 2: CONTROL VEHICULAR Y PROCEDIMIENTOS -->
+    <div class="section-card">
+      <h2 class="section-title">2. Control Vehicular y Procedimientos</h2>
+      
+      <div class="macro-box">
+        <span class="macro-text">/me ¡[S.W.A.T-ELITE] DETÉNGASE, APAGUE EL MOTOR Y PÓNGASE EN LA PARTE DE ATRÁS DE SU VEHÍCULO.</span>
+        <button class="btn-copy" onclick="copyMacro(this)">Copiar</button>
+      </div>
+
+      <div class="macro-box">
+        <span class="macro-text">/do [S.W.A.T-ELITE] PRESENTE SUS DOCUMENTOS.</span>
+        <button class="btn-copy" onclick="copyMacro(this)">Copiar</button>
+      </div>
+
+      <div class="macro-box">
+        <span class="macro-text">/do [S.W.A.T-ELITE] ÚLTIMA ADVERTENCIA: PRESENTE SUS DOCUMENTOS O SERÁ ACUSADO DE 3.2 Y 3.6.</span>
+        <button class="btn-copy" onclick="copyMacro(this)">Copiar</button>
+      </div>
+
+      <div class="macro-box">
+        <span class="macro-text">/do [S.W.A.T-ELITE] REGISTRANDO LOS DOCUMENTOS AL SOSPECHOSO.</span>
+        <button class="btn-copy" onclick="copyMacro(this)">Copiar</button>
+      </div>
+
+      <div class="macro-box">
+        <span class="macro-text">/do [S.W.A.T-ELITE] SOSPECHOSO LIMPIO PUEDE RETIRARSE.</span>
+        <button class="btn-copy" onclick="copyMacro(this)">Copiar</button>
+      </div>
+    </div>
+
+    <!-- BLOQUE 3: DETENCIONES Y ARRESTOS -->
+    <div class="section-card">
+      <h2 class="section-title">3. Detenciones y Arrestos</h2>
+
+      <div class="macro-box">
+        <span class="macro-text">/me [S.W.A.T-ELITE] ESTÁ SIENDO DETENIDO, NO ARRESTADO. ¡POR FAVOR, SÍGAME!</span>
+        <button class="btn-copy" onclick="copyMacro(this)">Copiar</button>
+      </div>
+
+      <div class="macro-box">
+        <span class="macro-text">/me [S.W.A.T-ELITE] CIUDADANO, ESTÁ USTED ARRESTADO. TIENE DERECHO A GUARDAR SILENCIO. TODO LO QUE DIGA SERÁ USADO EN SU CONTRA.</span>
+        <button class="btn-copy" onclick="copyMacro(this)">Copiar</button>
+      </div>
+
+      <div class="macro-box">
+        <span class="macro-text">/me [S.W.A.T-ELITE] CIUDADANO, ESTÁ USTED ARRESTADO POR ESTAR EN LA LISTA DE LOS MAS BUSCADOS. TIENE DERECHO A GUARDAR SILENCIO. TODO LO QUE DIGA SERÁ USADO EN SU CONTRA.</span>
+        <button class="btn-copy" onclick="copyMacro(this)">Copiar</button>
+      </div>
+    </div>
+
+    <!-- BLOQUE 4: COMUNICACIONES DE RADIO (/FLOBBY) -->
+    <div class="section-card">
+      <h2 class="section-title">4. Códigos de Radio (/flobby)</h2>
+
+      <div class="macro-box">
+        <span class="macro-text">/flobby (10-15) [S.W.A.T-ELITE] SOSPECHOSO BAJO CUSTODIA.</span>
+        <button class="btn-copy" onclick="copyMacro(this)">Copiar</button>
+      </div>
+      
+          <div class="macro-box">
+        <span class="macro-text">/flobby [S.W.A.T-ELITE] TRASLADO DE DETENIDO.</span>
+        <button class="btn-copy" onclick="copyMacro(this)">Copiar</button>
+      </div>
+
+      <div class="macro-box">
+        <span class="macro-text">/flobby EN CAMINO</span>
+        <button class="btn-copy" onclick="copyMacro(this)">Copiar</button>
+      </div>
+
+      <div class="macro-box">
+        <span class="macro-text">/flobby (10-7) FUERA DE SERVICIO.</span>
+        <button class="btn-copy" onclick="copyMacro(this)">Copiar</button>
+      </div>
+
+      <div class="macro-box">
+        <span class="macro-text">/flobby (10-8) EN SERVICIO.</span>
+        <button class="btn-copy" onclick="copyMacro(this)">Copiar/>
+      </div>
+
+      <div class="macro-box">
+        <span class="macro-text">/flobby (10-6) ACTUALMENTE OCUPADO.</span>
+        <button class="btn-copy" onclick="copyMacro(this)">Copiar</button>
+      </div>
+
+      <div class="macro-box">
+        <span class="macro-text">/flobby (10-4) ENTENDIDO.</span>
+        <button class="btn-copy" onclick="copyMacro(this)">Copiar</button>
+      </div>
+    </div>
+
+    <!-- BLOQUE 5: PRESENTACIÓN Y CONTROL DE ZONA -->
+    <div class="section-card">
+      <h2 class="section-title">5. Presentación y Control de Zona</h2>
+
+      <div class="macro-box">
+        <span class="macro-text">/me MI MÁXIMO RESPETO, SR.(A) [RANGO] [NOMBRE], S.W.A.T-ELITE] [PLACA #  ] ¡PRESENTÁNDOSE!</span>
+        <button class="btn-copy" onclick="copyMacro(this)">Copiar</button>
+      </div>
+
+      <div class="macro-box">
+        <span class="macro-text">/me HOLA, SOY EL (RANGO) (NOMBRE). DE LA [S.W.A.T-ELITE] POLICÍA DEL ESTADO DE LA COSTA OESTE DE LINCOLN. ¿CÓMO LE PUEDO AYUDAR?</span>
+        <button class="btn-copy" onclick="copyMacro(this)">Copiar</button>
+      </div>
+
+      <div class="macro-box">
+        <span class="macro-text">/me [S.W.A.T-ELITE] ¡ÚLTIMA ADVERTENCIA! ¡ABANDONA LA ZONA AHORA O SERÁS ACUSADO DE UN 1.7 Y 3.2! ¡ESTA ES UNA ZONA VERDE, NO UNA ZONA DE RECREO!</span>
+        <button class="btn-copy" onclick="copyMacro(this)">Copiar</button>
+      </div>
+
+      <div class="macro-box">
+        <span class="macro-text">/me [S.W.A.T-ELITE] AL NO SEGUIR MIS ÓRDENES, PROCEDERÉ A COLOCARLE UN DISPOSITIVO DE RASTREO.</span>
+        <button class="btn-copy" onclick="copyMacro(this)">Copiar</button>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="toast">Copiado al portapapeles</div>
+
+  <script>
+    function copyMacro(button) {
+      const textToCopy = button.previousElementSibling.innerText;
+      
+      navigator.clipboard.writeText(textToCopy).then(() => {
+        const originalText = button.innerText;
+        button.innerText = '¡Copiado!';
+        button.classList.add('copied');
+
+        const toast = document.getElementById('toast');
+        toast.classList.add('show');
+
+        setTimeout(() => {
+          button.innerText = originalText;
+          button.classList.remove('copied');
+          toast.classList.remove('show');
+        }, 1500);
+      });
+    }
+  </script>
+
+</body>
+</html>
